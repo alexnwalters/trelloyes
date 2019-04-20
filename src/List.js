@@ -3,12 +3,15 @@ import Card from './Card';
 import './List.css';
 
 class ListClass extends React.Component {
-    render() {
-        console.log(this.props.cards)
+    static defaultProps = {
+        cards: [],
+    };   
 
-        const card = this.props.cards.map((card, i) => 
+    render() {
+        console.log(this.props.cards);
+        const card = this.props.cards.map( card => 
             <Card
-                key={i}
+                key={card.id}
                 title={card.title}
                 content={card.content}
             >
